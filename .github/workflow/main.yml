@@ -1,0 +1,17 @@
+# name of the workflow
+name : run strmlite job 
+
+# trigger 
+on :
+    push :
+          branches :
+                -main
+                # define task
+strmlite job :
+         runs on : ubuntu-latest    
+steps :
+-name : checkout code
+uses :  action/checkout@v2
+
+-name : setup python
+run :  echo 'welcome to github action '
