@@ -26,7 +26,7 @@ jobs :
 
   transform-data-job:
       runs-on: ubuntu-latest
-      need: extract-data-job
+      needs: extract-data-job
 
       steps:
         - name: checkout code
@@ -37,7 +37,7 @@ jobs :
 
   load-data-jobs:
       runs-on: ubuntu-latest
-      need: transform-data-job
+      needs: transform-data-job
 
       steps:
          - name: checkout code
