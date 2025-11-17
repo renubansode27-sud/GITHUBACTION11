@@ -7,11 +7,13 @@ on :
           branches :
                 -main
                 # define task
-strmlite job :
-         runs on : ubuntu-latest    
-steps :
--name : checkout code
-uses :  action/checkout@v2
+jobs:
+  strmlite job:
+    runs on : ubuntu-latest    
 
--name : setup python
-run :  echo 'welcome to github action '
+    steps:
+      - name: checkout code
+        uses:  action/checkout@v2
+
+      - name: setup python
+        run :  echo 'welcome to github action '
